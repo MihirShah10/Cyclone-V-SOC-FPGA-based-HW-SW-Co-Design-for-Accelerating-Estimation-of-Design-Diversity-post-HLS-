@@ -7,4 +7,4 @@ system which comprise of multiple such synthesized design copies (structurally d
 certain tests (which in real world would be Common Mode Failures caused due to power fluctuations, electromagnetic
 interferences etc. ) and thereby estimated the robustness of such mission critical IC’s.
 • Through the help of D-Metric proposed by Dr. Subhashish Mitra (Stanford's Robust Systems Group), we can identify
-such potential designs that can be implemented on the system, using a mathematical approach
+such potential designs that can be implemented on the system, using a mathematical approach.
