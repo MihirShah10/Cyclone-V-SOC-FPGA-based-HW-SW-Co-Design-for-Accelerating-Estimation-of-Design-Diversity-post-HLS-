@@ -1,0 +1,29 @@
+// This is Micro-Architecture 1
+//y0=((a0 or b0) and c0) or (d0 and (c0 or b0))
+
+module ma_1(
+            input a0, 
+            input b0, 
+            input c0,
+            input d0,
+            input tri_e,
+            output y0
+            );
+  
+wire r1,r2,r3,r4;
+wire tri_y;
+
+tri_buffer TRI_MA_1(tri_y,tri_e,y0);
+
+always @ (a0 or b0 or c0 or d0);
+
+begin
+
+or(r1,a0,b0);
+and(r2,r1,c0);
+or(r3,c0,b0);
+and(r4,r3,d0);
+or(tri_y,r2,r4);
+
+end
+endmodule

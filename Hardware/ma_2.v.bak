@@ -1,0 +1,35 @@
+// This is Micro-Architecture 2
+
+module ma_2(
+            input a1, 
+            input b1, 
+            input c1,
+            input d1,
+            input tri_en,
+            output y1
+            );
+  
+wire j1,j2,j3,j4,j5;
+wire a1_not,b1_not,c1_not,d1_not;
+wire tri_y1;
+
+tri_buffer TRI_MA_2(tri_y1,tri_en,y1);
+
+always @ (a1 or b1 or c1 or d1);
+
+begin
+not(a1_not,a1);
+not(b1_not,b1);
+not(c1_not,c1);
+not(d1_not,d1);
+
+and(j1,a1_not,b1_not);
+or(j2,j1,c1_not);
+and(j3,c1_not,b1_not);
+or(j4,j3,d1_not);
+
+and(j5,j2,j4);
+not(tri_y1,j5);
+
+end
+endmodule

@@ -1,0 +1,26 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+use ieee.std_logic_unsigned.all;
+
+
+
+ENTITY ma_1 IS
+
+PORT (in1 : in std_logic;
+		in2 : in std_logic;
+		in3 : in std_logic;
+		in4 : in std_logic;
+		out1 : out std_logic;
+		out2 : out std_logic
+);
+END ma_1;
+
+ARCHITECTURE main OF ma_1 IS
+
+BEGIN
+
+out1 <= (in1 OR in2);
+out2 <= (in3 AND in4);
+
+END main;

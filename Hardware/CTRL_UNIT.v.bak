@@ -1,0 +1,31 @@
+
+module CTRL_UNIT(CLK,data,scan_enable,ctrl_feedback,scan_chain,count);
+
+input CLK;
+input [15:0]data;
+input scan_enable;
+output reg ctrl_feedback;
+output reg scan_chain;
+output reg [4:0]count;
+
+initial begin
+count=5'b0;
+end
+    
+always @(posedge CLK)
+begin
+    if (scan_enable && count <=5'b10000) 
+        begin  
+            ctrl_feedback=1'b1;
+            scan_chain=data[count];
+            count=count+1;
+            $monitor("Inside the Loop");   
+        end
+    if(~scan_enable)
+        begin
+            ctrl_feedback=1'b0;
+            count=5'b0;
+        end
+        
+end    
+endmodule
